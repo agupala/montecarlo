@@ -1,0 +1,12 @@
+{% extends 'plot/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Hola Mundo</h1>
+        <p>A-min: {{ amin }}</p>
+        {{ request.get_full_path }}
+        {{ request.build_absolute_uri }}
+        {{ request.path }}
+    </div>
+{% endblock content %}
+    

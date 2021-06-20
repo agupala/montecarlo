@@ -1,0 +1,106 @@
+{% extends 'plot/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Hola Mundo</h1>
+        <form method="GET" action="{% url 'operations' %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="amin">A-Min</label>
+                        <input type="number" name="amin" id="" class="form-control">
+                    </div>    
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="amax">A-Max</label>
+                        <input type="number" name="amax" id="" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="bmin">B-Min</label>
+                        <input type="number" name="bmin" id="" class="form-control">
+                    </div>    
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="bmax">B-Max</label>
+                        <input type="number" name="bmax" id="" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="cmin">C-Min</label>
+                        <input type="number" name="cmin" id="" class="form-control">
+                    </div>    
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="cmax">C-Max</label>
+                        <input type="number" name="cmax" id="" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dmin">D-Min</label>
+                        <input type="number" name="dmin" id="" class="form-control">
+                    </div>    
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dmax">D-Max</label>
+                        <input type="number" name="dmax" id="" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="emin">E-Min</label>
+                        <input type="number" name="emin" id="" class="form-control">
+                    </div>    
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="emax">E-Max</label>
+                        <input type="number" name="emax" id="" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="smin">S-Min</label>
+                        <input type="number" name="smin" id="" class="form-control">
+                    </div>    
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="smax">S-Max</label>
+                        <input type="number" name="smax" id="" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="z">Z</label>
+                        <input type="number" name="z" id="" class="form-control" disabled value="1.5">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+                
+        </form>
+{% endblock content %}
+    

@@ -1,0 +1,163 @@
+{% extends 'plot/base.html' %}
+{% load static %}
+
+{% block content %}
+    
+    {% if results %}
+        <div class="container">
+            <h1>Statistics Results</h1>
+            <p>Percentile 99%: {{ results.p99 }}</p>
+            <p>Percentile 90%: {{ results.p90 }}</p>
+            <p>Percentile 50%: {{ results.p50 }}</p>
+            <p>Percentile 10%: {{ results.p10 }}</p>
+            <p>Mean: {{ results.mean }}</p>
+            <p>Median: {{ results.median }}</p>
+        </div>
+        <div class="container">
+            <h1>Grafics</h1>
+            <h2>Histograma de Frecuencias de R</h2>
+            {% autoescape off %}
+                <img class="img-fluid" src="{% static 'histogram/histogram.png' %}" alt="Histograma de Frecuencias de R">
+            {% endautoescape %}
+        </div>
+        
+    {% else %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Formulario de datos</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.amin }}
+                            </div>
+                            {{ form.amin.errors }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.amax }}
+                            </div>
+                            {{ form.amax.errors }}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.bmin }}
+                            </div>
+                            {{ form.bmin.errors }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.bmax }}
+                            </div>
+                            {{ form.bmax.errors }}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.cmin }}
+                            </div>
+                            {{ form.cmin.errors }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.cmax }}
+                            </div>
+                            {{ form.cmax.errors }}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.dmin }}
+                            </div>
+                            {{ form.dmin.errors }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.dmax }}
+                            </div>
+                            {{ form.dmax.errors }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.emin }}
+                            </div>
+                            {{ form.emin.errors }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.emax }}
+                            </div>
+                            {{ form.emax.errors }}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.smin }}
+                            </div>
+                            {{ form.smin.errors }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.smax }}
+                            </div>
+                            {{ form.smax.errors }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ form.z }}
+                            </div>
+                            {{ form.z.errors }}
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class='btn btn-primary mt-2'>Submit</button>
+            </form>
+        </div>
+    {% endif %}
+        
+{% endblock content %}
